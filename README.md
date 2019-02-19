@@ -4,7 +4,7 @@ Planet creation, deletion, listing, listing per name and listing per id API.
 
 ## Getting Started
 
-Open a terminal and git clone the project into a directory. Open the IDE (Eclipse, IntelliJ or STS) and open the project as a Maven project. Run the project as a Java Application. Open browser and type localhost:8080/swagger-ui.html in order to acess Swagger UI.
+Open a terminal and git clone the project into a directory. Open the IDE (Eclipse, IntelliJ or STS) and open the project as a Maven project. Run the project as a Java Application. Open browser and type localhost:8080/swagger-ui.html in order to access Swagger UI.
 
 ### Prerequisites
 
@@ -16,6 +16,7 @@ Java 8, Spring Boot, Spring Data, Spring Web, Swagger, MySQL, JUnit, Mockito
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Swagger 2](https://swagger.io) - Used to create API documentation
 * [MySQL](https://dev.mysql.com) - The database used
+* [Spring Initializr](https://start.spring.io) - Spring Initializr
 
 ## Versioning
 
