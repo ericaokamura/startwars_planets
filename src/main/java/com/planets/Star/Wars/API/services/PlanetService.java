@@ -12,9 +12,15 @@ public class PlanetService {
 
     @Autowired
     PlanetRepository planetRepository;
-
-    public void adicionaPlaneta (Planet planeta) {
-        planetRepository.save(planeta);
+    
+    public Planet adicionaPlaneta (Planet planeta) {
+    		Planet outroPlaneta = planetRepository.findByNome(planeta.getNome());
+    		Planet planetaAdicionado = new Planet();
+        if(outroPlaneta == null) {
+        		planetaAdicionado =	planetRepository.save(planeta);
+        		return planetaAdicionado;
+        }
+		return null;
     }
 
     public List<Planet> listaPlanetasBanco() {
@@ -27,9 +33,9 @@ public class PlanetService {
         return planetas;
     }
 
-    public List<Planet> encontrePlanetasPorNome(String nome) {
-        Optional<List<Planet>> planetas = planetRepository.findByNome(nome);
-        return planetas.orElse(null);
+    public Planet encontrePlanetaPorNome(String nome) {
+        Planet planeta = planetRepository.findByNome(nome);
+        return planeta;
     }
 
     public Planet encontrePlanetaPorId(Long id) {
@@ -38,6 +44,9 @@ public class PlanetService {
     }
 
     public void removePlaneta(Long id) {
-        planetRepository.deleteById(id);
+		Optional<Planet> outroPlaneta = planetRepository.findById(id);
+		if(outroPlaneta != null) {
+			planetRepository.deleteById(id);
+		}
     }
 }
