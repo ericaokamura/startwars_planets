@@ -21,6 +21,19 @@ public class Planet {
     
     private Long qtdAparicoes;
     
+    public Planet(Long id, String nome, String clima, String terreno, Long qtdAparicoes) {
+    	super();
+    	this.id = id;
+    	this.nome = nome;
+    	this.clima = clima;
+    	this.terreno = terreno;
+    	this.qtdAparicoes = qtdAparicoes;
+    }
+    
+    public Planet() {
+    	
+    }
+    
     public Long getId() {
 		return id;
 	}
@@ -59,19 +72,6 @@ public class Planet {
 
 	public void setQtdAparicoes(Long qtdAparicoes) {
 		this.qtdAparicoes = qtdAparicoes;
-	}
-
-	public Planet(Long id, String nome, String clima, String terreno, Long qtdAparicoes) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.clima = clima;
-		this.terreno = terreno;
-		this.qtdAparicoes = qtdAparicoes;
-	}
-
-	public Planet() {
-		
 	}
 
 }

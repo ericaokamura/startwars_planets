@@ -4,7 +4,6 @@ import com.planets.Star.Wars.API.models.Planet;
 import com.planets.Star.Wars.API.repositories.PlanetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -29,8 +28,8 @@ public class PlanetService {
     }
 
     public Planet encontrePlanetaPorNome(String nome) {
-        Planet planeta = planetRepository.findByNome(nome);
-        return planeta;
+        Optional<Planet> planeta = planetRepository.findByNome(nome);
+        return planeta.orElse(null);
     }
 
     public Planet encontrePlanetaPorId(Long id) {

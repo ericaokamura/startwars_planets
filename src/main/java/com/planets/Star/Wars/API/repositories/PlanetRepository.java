@@ -1,11 +1,8 @@
 package com.planets.Star.Wars.API.repositories;
 
 import com.planets.Star.Wars.API.models.Planet;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import javax.persistence.Id;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +13,6 @@ public interface PlanetRepository extends CrudRepository<Planet, Long> {
 
     Optional<Planet> findById(Long id);
 
-    Planet findByNome(String nome);
+    Optional<Planet> findByNome(String nome);
 
 }
