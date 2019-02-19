@@ -8,7 +8,7 @@ Open a terminal and git clone the project into a directory. Open the IDE (Eclips
 
 ### Prerequisites
 
-Java 8, Spring Boot, Spring Data, Spring Web, Swagger, MySQL, JUnit, Mockito
+Java 8, Spring Tool Suite, Spring Boot, Spring Data, Spring Web, Swagger, MySQL, JUnit, Mockito
 
 ## Built With
 
@@ -17,6 +17,8 @@ Java 8, Spring Boot, Spring Data, Spring Web, Swagger, MySQL, JUnit, Mockito
 * [Swagger 2](https://swagger.io) - Used to create API documentation
 * [MySQL](https://dev.mysql.com) - The database used
 * [Spring Initializr](https://start.spring.io) - Spring Initializr
+* [JUnit](https://junit.org/junit5/) - JUnit 5
+* [Mockito](https://site.mockito.org) - Mockito Framework
 
 ## Versioning
 
