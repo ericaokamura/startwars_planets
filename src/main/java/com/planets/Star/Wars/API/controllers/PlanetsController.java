@@ -21,31 +21,31 @@ public class PlanetsController {
     @Autowired
     PlanetService planetService;
 
-    @PostMapping(value= "/planets", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/planets", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Planet> adicionarPlaneta(@RequestBody() Planet planeta) {
         planetService.adicionaPlaneta(planeta);
         return new ResponseEntity<Planet>(planeta, new HttpHeaders(), HttpStatus.OK);
     }
 
-    @GetMapping(value="/planets", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value ="/planets", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Planet>> listaPlanetasBanco() {
         List<Planet> planetas = planetService.listaPlanetasBanco();
         return new ResponseEntity<List<Planet>>(planetas, new HttpHeaders(), HttpStatus.OK);
     }
     
-    @GetMapping(value="/planets/nome/{nome}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Planet> encontrePlanetaPorNome(@PathVariable("nome") String nome) {
-        Planet planeta = planetService.encontrePlanetaPorNome(nome);
-        return new ResponseEntity<Planet>(planeta, new HttpHeaders(), HttpStatus.OK);
+    @GetMapping(value ="/planets/nome/{nome}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Planet>> encontrePlanetasPorNome(@PathVariable("nome") String nome) {
+        List<Planet> planetas = planetService.encontrePlanetasPorNome(nome);
+        return new ResponseEntity<List<Planet>>(planetas, new HttpHeaders(), HttpStatus.OK);
     }
     
-    @GetMapping(value="/planets/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value ="/planets/id/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Planet> encontrePlanetaPorId(@PathVariable("id") Long id) {
         Planet planeta = planetService.encontrePlanetaPorId(id);
         return new ResponseEntity<Planet>(planeta, new HttpHeaders(), HttpStatus.OK);
     }
     
-    @DeleteMapping("/planets/id/{id}")
+    @DeleteMapping(value = "/planets/id/{id}")
     public void removePlaneta(@PathVariable("id") Long id) {
         planetService.removePlaneta(id);
     }

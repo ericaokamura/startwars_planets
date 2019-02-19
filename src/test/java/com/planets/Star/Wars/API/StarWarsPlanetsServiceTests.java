@@ -47,8 +47,8 @@ public class StarWarsPlanetsServiceTests {
 	
 	@Test
 	public void test_encontra_planeta_por_nome() {
-		when(planetRepository.findByNome(planeta.getNome())).thenReturn(Optional.of(planeta));
-		Assert.assertEquals(planetService.encontrePlanetaPorNome(planeta.getNome()), planeta);
+		when(planetRepository.findByNome(planeta.getNome())).thenReturn(Optional.of(Arrays.asList(planeta, planeta, planeta)));
+		Assert.assertEquals(planetService.encontrePlanetasPorNome(planeta.getNome()), planeta);
 	}
 	
 	@Test

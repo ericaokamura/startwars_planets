@@ -13,6 +13,6 @@ public interface PlanetRepository extends CrudRepository<Planet, Long> {
 
     Optional<Planet> findById(Long id);
 
-    Optional<Planet> findByNome(String nome);
+    Optional<List<Planet>> findByNome(String nome);
 
 }

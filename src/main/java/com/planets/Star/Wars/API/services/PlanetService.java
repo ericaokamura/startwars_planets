@@ -27,9 +27,9 @@ public class PlanetService {
         return planetas;
     }
 
-    public Planet encontrePlanetaPorNome(String nome) {
-        Optional<Planet> planeta = planetRepository.findByNome(nome);
-        return planeta.orElse(null);
+    public List<Planet> encontrePlanetasPorNome(String nome) {
+        Optional<List<Planet>> planetas = planetRepository.findByNome(nome);
+        return planetas.orElse(null);
     }
 
     public Planet encontrePlanetaPorId(Long id) {
